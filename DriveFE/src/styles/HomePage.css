@@ -1,0 +1,261 @@
+/* HomePage Styles */
+.homepage {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.page-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--border-color-soft);
+  margin-bottom: var(--spacing-lg);
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Upload Area */
+.upload-area {
+  background-color: var(--surface-color);
+  border: 2px dashed var(--border-color-soft);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-bottom: var(--spacing-xl);
+}
+
+.upload-area:hover {
+  background-color: var(--surface-color-variant);
+  border-color: var(--accent-color);
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--accent-color);
+  opacity: 0.8;
+}
+
+.upload-area h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.upload-area p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: var(--surface-color);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color-soft);
+  padding: 6px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+  background-color: var(--surface-color-variant);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--selection-color);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Files Grid */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.file-card {
+  background-color: var(--bg-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: all var(--transition-base);
+  border: 1px solid var(--border-color-soft);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.file-card:hover {
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border-color);
+}
+
+.file-card.selected {
+  border-color: var(--accent-color);
+  background-color: var(--selection-color);
+  box-shadow: 0 0 0 1px var(--accent-color);
+}
+
+.file-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xl) 0;
+  background-color: var(--surface-color);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.file-icon-large {
+  font-size: 2.5rem;
+  color: var(--text-tertiary);
+}
+
+.file-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.file-size {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.action-btn.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color-soft);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all var(--transition-base);
+}
+
+.file-card:hover .action-btn.delete-btn {
+  opacity: 1;
+}
+
+.action-btn.delete-btn:hover {
+  background-color: var(--color-error);
+  color: #ffffff;
+  border-color: var(--color-error);
+}
+
+/* Modals */
+.deleting-title, .uploading-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.deleting-filename, .uploading-filename {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-color-soft);
+}
+
+.pagination-controls button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color-soft);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: var(--surface-color-variant);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--surface-color-variant);
+}
+
+.page-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.page-buttons button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.page-buttons button:hover {
+  background-color: var(--hover-overlay);
+  color: var(--text-primary);
+}
+
+.page-buttons button.active {
+  background-color: var(--selection-color);
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  font-weight: 600;
+}

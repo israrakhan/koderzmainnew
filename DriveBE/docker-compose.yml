@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+
+    container_name: mysql
+
+    environment:
+      MYSQL_DATABASE: Koderz_Drive_Test
+      MYSQL_USER: koderz
+      MYSQL_PASSWORD: password123
+      MYSQL_ROOT_PASSWORD: root123
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+
+    container_name: backend
+
+    ports:
+      - "8080:8080"
+
+    env_file:
+      - ./backend/.env
+
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./frontend
+
+    container_name: frontend
+
+    ports:
+      - "80:80"
+
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:

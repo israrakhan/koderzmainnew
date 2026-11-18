@@ -1,0 +1,57 @@
+/* Context Menu Styles */
+.context-menu {
+  position: fixed;
+  z-index: 2000;
+  min-width: 200px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 8px 0;
+  backdrop-filter: blur(8px);
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+  animation: contextMenuFadeIn 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes contextMenuFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.context-menu-item {
+  width: 100%;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition-base);
+}
+
+.context-menu-item:hover:not(.disabled) {
+  background-color: var(--hover-overlay);
+}
+
+.context-menu-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.context-menu-item.danger {
+  color: var(--color-error);
+}
+
+.context-menu-icon {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.context-menu-item:hover .context-menu-icon {
+  color: var(--text-primary);
+}

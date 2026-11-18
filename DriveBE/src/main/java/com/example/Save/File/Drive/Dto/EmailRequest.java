@@ -1,0 +1,13 @@
+package com.example.Save.File.Drive.Dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class EmailRequest {
+
+    private String email;
+
+
+}

@@ -1,0 +1,256 @@
+/* New Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: all var(--transition-base);
+}
+
+.new-modal {
+  background-color: var(--bg-color);
+  border-radius: var(--radius-xl);
+  width: 90%;
+  max-width: 448px;
+  max-height: 90vh;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.modal-header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-bottom: 1px solid var(--border-color-soft);
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  transition: all var(--transition-base);
+}
+
+.close-btn:hover {
+  color: var(--text-primary);
+}
+
+.modal-tabs {
+  flex-shrink: 0;
+  display: flex;
+  border-bottom: 1px solid var(--border-color-soft);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-base);
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.modal-content {
+  padding: var(--spacing-xl);
+  overflow-y: auto;
+  flex: 1;
+  margin: 10px auto;
+}
+
+.input-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.folder-input, .file-input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.folder-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+/* File List Styles */
+.file-list {
+  margin-top: var(--spacing-md);
+  max-height: 160px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  background-color: var(--surface-color);
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid var(--border-color-soft);
+  font-size: 0.85rem;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-icon {
+  margin-right: 8px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+}
+
+.file-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+
+.file-size {
+  color: var(--text-tertiary);
+  margin-left: 8px;
+  font-size: 0.75rem;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+  margin-top: var(--spacing-lg);
+  background: var(--border-color-soft);
+  border-radius: var(--radius-full);
+  height: 8px;
+  overflow: visible;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.progress-bar {
+  background: var(--accent-gradient);
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.progress-container p {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Custom scrollbar for file-list and modal-content */
+.file-list::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.file-list::-webkit-scrollbar-track,
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.file-list::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover,
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  margin-top: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-btn {
+  background: var(--accent-gradient);
+  color: white;
+}
+
+.upload-btn {
+  background: var(--accent-gradient);
+  color: white;
+}
+
+.create-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: var(--shadow-md);
+}
+
+.create-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.input-error {
+  color: var(--danger-color, #d9534f);
+  margin-top: 8px;
+  font-size: 0.875rem;
+}

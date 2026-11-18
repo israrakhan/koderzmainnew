@@ -1,0 +1,83 @@
+/* Skeleton Loader Styles */
+.skeleton-base {
+  background: linear-gradient(
+    90deg,
+    var(--surface-color) 25%,
+    var(--surface-color-variant) 50%,
+    var(--surface-color) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.skeleton-card {
+  padding: var(--spacing-md);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  @extend .skeleton-base;
+}
+
+.skeleton-card-title {
+  height: 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+  width: 80%;
+  @extend .skeleton-base;
+}
+
+.skeleton-card-meta {
+  height: 12px;
+  border-radius: var(--radius-sm);
+  width: 60%;
+  @extend .skeleton-base;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Helper class since I can't use @extend in raw CSS without a preprocessor */
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--surface-color) 25%,
+    var(--surface-color-variant) 50%,
+    var(--surface-color) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+.skeleton-card-icon,
+.skeleton-card-title,
+.skeleton-card-meta,
+.skeleton-table-cell,
+.skeleton-list-icon,
+.skeleton-list-title,
+.skeleton-list-subtitle,
+.skeleton-text-line {
+  background: linear-gradient(
+    90deg,
+    var(--surface-color) 25%,
+    var(--surface-color-variant) 50%,
+    var(--surface-color) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}

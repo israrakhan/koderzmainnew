@@ -1,0 +1,19 @@
+.main-content {
+  margin-left: 256px; /* Match professional sidebar width */
+  margin-top: 64px; /* Match TopNavbar height */
+  min-height: calc(100vh - 64px);
+  background-color: var(--bg-color);
+  transition: all var(--transition-base);
+  padding: var(--spacing-xl);
+}
+
+body.sidebar-hidden .main-content {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: var(--spacing-md);
+  }
+}
