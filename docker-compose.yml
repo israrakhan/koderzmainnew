@@ -20,7 +20,7 @@ services:
       - mysql_data:/var/lib/mysql
 
   backend:
-    build: ./backend
+    build: ./DriveBE
 
     container_name: backend
 
@@ -28,13 +28,13 @@ services:
       - "8080:8080"
 
     env_file:
-      - ./backend/.env
+      - ./DriveBE/.env
 
     depends_on:
       - mysql
 
   frontend:
-    build: ./frontend
+    build: ./DriveFE
 
     container_name: frontend
 
